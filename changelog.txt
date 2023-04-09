@@ -6,7 +6,7 @@ UFPEThesis
 01 November 2003
     Revision 1: corrections and improvements submitted by Rafael Borges (rmb2@cin.ufpe.br)
     * Corrected minor spelling erros
-    * Included new option 'bsc' for bachelor´s dissertations
+    * Included new option 'bsc' for bachelorÂ´s dissertations
     * Removed latin1.sty file dependency
     * Corrected 'babel' package loading with option 'brazil'
 

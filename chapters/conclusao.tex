@@ -1,0 +1,97 @@
+\chapter{Conclusão e Trabalhos Futuros}
+
+Esse trabalho teve como objetivo propor, documentar e implementar um protocolo
+de rede baseado na tecnologia LoRa para que desenvolvedores pudessem utilizá-lo
+em seus sistemas embarcados indiferentemente dos hardwares e rádios utilizados.
+Durante o desenvolvimento do projeto foram utilizadas bastantes metodologias da
+literatura de engenharia de software como também foi buscado inspirações em tecnologias
+já existentes em diversas áreas como sistemas embarcados, rede de computadores,
+entre outras. Isso não só ajudou a garantir a qualidade do projeto como uma proposta
+em si, mas também como um produto significativo para alguns cenários que foram
+destacados nas etapas de idealização. Outro resultado destacável das metologias
+utilizadas no desenvolvimento é qualidade da codificação do projeto principalmente
+da perspectiva de código aberto, conquistando assim a possibilidade de evolução
+continua da proposta não só pelo autor mas também por toda uma comunidade.
+Os resultados apresentados nesse trabalho se mostraram no geral condizentes e
+positivos com os objetivos definidos inicialmente, contudo é necessário a
+realização de mais testes em campo e observando mais a fundo alguns detalhes
+que não foram observados durante esse trabalho, como o tempo gasto para
+diferentes tipos de transmissão, consumo de energia entre outros. O objetivo
+disso é fortalecer mais ainda que todos os aspectos teóricos documentados
+durante o desenvolvimento estejam presentes e funcionais na implementação.
+
+\section{Análise comparativa com este trabalho}
+
+Na tabela \ref{table:rel-comp-atual} a seguir, segue a comparação da tabela \ref{table:rel-comp} feita no capítulo de trabalhos relacionados agora atualizada com as características do projeto desenvolvido.
+
+\begin{table}[H]
+    \begin{center}
+    \caption{Comparativo entre trabalhos relacionados e trabalho atual}
+    \label{table:rel-comp-atual}
+    \begin{tabular}{|l|l|l|l|}
+    \hline
+     & LoRaCTP & LoRaMesher & SNPES \\
+    \hline
+    Topologia de Rede & Nenhuma & Mesh & Estrela \\
+    \hline
+    Transmissão Confiável & Sim & Sim & Sim \\
+    \hline
+    Tratamento de Colisão & ALOHA & CSMA/CA & ALOHA \\
+    \hline
+    Empacotamento & Sim & Não & Sim \\
+    \hline
+    Integridade dos Dados & Checksum de 3 bytes & Nenhum & Nenhum \\
+    \hline
+    Independente do Rádio & Não & Não & Sim \\
+    \hline
+    Biblioteca para uso & Não & Sim & Sim \\
+    \hline
+    Código Aberto & Sim & Sim & Sim \\
+    \hline
+    \end{tabular}
+    \end{center}
+\end{table}
+
+\section{Futuro do projeto}
+
+A partir daqui os maiores objetivos desse projeto se tornam agora em trabalhar
+para que cada vez mais ele pareça uma solução \textit{of the shelf} para o
+desenvolvedor IoT. Dentre esses objetivos vale destacar as possíveis rotas futuras
+para esse projeto:
+
+\begin{itemize}
+    \item \textbf{Testes em diferentes rádios:} Os rádios LoRaMESH da Radioenge utilizados para o desenvolvimento desse projeto podem ser considerados relativamente simples quando comparados a outros
+    mais usados profissionalmente na área, os rádios usados possuem antenas simples e de baixo ganho
+    do sinal, dificultando a visualização do desempenho real do projeto em cenários de longas
+    distâncias. É objetivo do trabalho que se obtenha um bom desempenho para os mais
+    diferentes rádios que o desenvolvedor possa querer utilizar, assim se faz importante
+    a validação para esse distintos componentes de hardware.
+    \item \textbf{Tratamento de colisão e Packet Loss:} Um tópico importante é o tratamento de colisões de pacotes, algo que é possível de acontecer na tecnologia LoRa e que pode causar um grande aumento de Packet Loss na rede entre outros problemas. foi implementando um tratamento de colisão relativamente simples baseado no protocolo ALOHA porém vale o estudo de outros protocolos como
+    o CSMA/CD e CSMA/CA como inspirações para testar se eles podem ajudar mais ainda na diminuição
+    de Packet Loss para o projeto desenvolvido.
+    \item \textbf{Validação da integridade dos pacotes e Checksum:} Outro tópico importante na
+    pauta de protocolos de rede é garantir a integridade dos pacotes, a tecnologia LoRa já
+    possui embutida na sua modulação um CRC (Cyclic Redundancy Check) e por isso esse tópico
+    não foi explorado no desenvolvimento do trabalho, porém para o futuro se faz valido estudar
+    quais benefícios, além de tornar o protocolo na aparência mais robusto, e quais os custos de se implementar uma validação de integridade embutida no projeto.
+    \item \textbf{Implementação em silício e Gateways IoT:} No atual estado o protocolo é totalmente
+    desenvolvido em software e o hardware do Gateway compartilha das mesmas características dos Nós (um microcontrolador IoT). Um ponto interessante de estudo seria quais oportunidades possam surgir
+    ao implementar o protocolo direto no silício, como num FPGA por exemplo, atuando como um coprocessador
+    dentro de um Gateway IoT com hardware bem mais complexo que possa assim gerenciar não só uma rede,
+    como feito no projeto mas múltiplas, pois durante o desenvolvimento do projeto é notável que o
+    maior peso de processamento e de dados se encontra no Gateway.
+    \item \textbf{Documentação de uso:} No estado atual o trabalho não possui nenhuma documentação 
+    de uso para o desenvolvedor IoT de como ele pode adicionar o protocolo e como ele pode
+    utilizado em seu projeto. Assim é importante desenvolver exemplos de como começar
+    com o projeto, quais são as dependências, e códigos de exemplo para diversos
+    casos de uso. Isso ajuda a remover a barreira inicial da adoção do projeto para
+    os desenvolvedores.
+    \item \textbf{Contribuição:} Investir em diminuir as barreiras iniciais que possam
+    existir para que pessoas possam contribuir de diversas forma com o projeto, não só
+    com codificação mas também com ideias. Isso trás um ponto extramente positivo que é
+    garantir a vitalidade do projeto,isso significa que ele estará sempre evoluindo de
+    alguma forma.
+    \item \textbf{Validação continua:} Garantir que o projeto em seus diferentes
+    estágios esteja sempre de acordo com uma \textit{pipeline} de testes. Isso garante
+    a qualidade de produto para todos.
+\end{itemize}

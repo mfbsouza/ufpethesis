@@ -1,0 +1,81 @@
+\chapter{Introdução}
+
+\section{Motivação}
+
+A ascensão da Internet das Coisas (IoT) introduziu aos mais diferentes tipos de objetos
+físicos o acesso à internet. Esses objetos, às vezes imperceptíveis no nosso dia a dia,
+gerando agora um grande fluxo coletivo de dados em tempo real, que em conjunto às 
+tecnologias de Aprendizagem de Maquina (ML) \cite{8001570}, tornou possível aplicações
+cada vez mais independentes e inteligentes em diversas áreas como agricultura,
+transporte, saúde, entre outras \cite{8883163}\cite{8358540}\cite{7474197}.
+
+Além de suas características físicas, os objetos possuem sistemas eletrônicos embutidos, 
+comumente conhecidos como sistemas embarcados. Esses sistemas são baseados em 
+microcontroladores com sensores e/ou atuadores. Eles possuem poder computacional, 
+conetividade, e energia limitados se
+comparados aos dispositivos mais comuns, como smartfones e computadores. Devido a tais 
+limitações, a indústria IoT impulsiona pesquisas que viabilizem a construção 
+de sistemas inteligentes nos mais restritos cenários \cite{9221219}.
+
+Nos últimos anos, tecnologias como LPWAN (Low Power Wide Area Network) tem tornado
+realidade sistemas IoT com objetos 
+distribuídos num grande espaço geográfico por oferecerem baixo consumo energético e 
+conectividade a longas distâncias \cite{7815384}. Dentre essas tecnologias como
+Sigfox e NB-IoT, LoRa (Longe Range) tem ganhado destaque entre elas por sua conectividade 
+a distâncias quilométricas, bidirecionalidade, baixo consumo, alta capacidade de nós na 
+rede, e por operar na faixa de frequência ISM (Industrial Scientific and Medical),
+de livre licença para uso em diversos países \cite{9230597}.
+
+Porém, de maneira simples, LoRa pode ser considerada tanto uma modulação de rádio 
+frequência como uma camada física de transmissão de dados, algo que não garante ao 
+desenvolvedor IoT um suporte de rede entre os nós e outras aplicações \cite{8474715}.
+Com isso, na indústria se propõem diferentes protocolos a serem implementados por cima
+da camada física da LoRa que estabelecem uma topologia de rede para o sistema.
+Dentre os protocolos, o mais difundido atualmente é o LoRaWAN, um protocolo aberto 
+proposto pela LoRa Alliance \cite{8767242}.
+
+A arquitetura LoRaWAN, apesar de apresentar uma solução para o estabelecimento
+de rede do sistema IoT, apresenta limitações como presença de nós
+desconectados da rede em sistemas com poucos \textit{gateways} de cobertura e
+falta de comunicação direta entre os nós \cite{8767242}. 
+Tais limitações podem dificultar alguns tipos de sistemas IoT de longas 
+distâncias, e dessa maneira ainda se fazem válidas as pesquisas e propostas de 
+protocolos baseados em LoRa \cite{8767242}\cite{NAKAMURA2022257}.
+
+\section{Objetivos}
+
+O objetivo \textbf{geral} desse trabalho é propor, documentar e implementar um
+protocolo de rede baseado em LoRa que forneça ao desenvolvedor de sistemas IoT
+o suporte de rede para seus dispositivos inteligentes usando LoRa.
+
+São objetivos \textbf{específicos} deste projeto:
+\begin{itemize}
+    \item Criação de documentação e diagramas sobre o protocolo proposto;
+	\item Implementação do protocolo em forma de biblioteca;
+	\item Execução de testes em dispositivos embarcados para validação do protocolo proposto;
+	\item Avaliação dos resultados obtidos.
+\end{itemize}
+
+\section{Estrutura do Trabalho}
+
+Neste capítulo são apresentados a motivação desse trabalho assim como o detalhamento dos
+objetivos a serem alcançados, e a estruturação escolhida para o documento. Os próximos
+capítulos abordados seguiram a seguinte estrutura:
+
+\begin{itemize}
+    \item \textbf{Capítulo 2}: Introdução de conceitos essenciais para o entendimento
+    da proposta desse trabalho.
+    
+    \item \textbf{Capítulo 3}: Apresentação de alguns trabalhos relacionados
+    e análise comparativa entre eles.
+    
+	\item \textbf{Capítulo 4}: Descrição do desenvolvimento da proposta, desde a
+	idealização, por meio de metodólogas usadas em engenharia de software, até
+	a implementação do projeto.
+	
+	\item \textbf{Capítulo 5}: Apresentação dos testes de software, descrição dos testes realizados sobre o protótipo em campo e análise dos resultados obtidos.
+	
+	\item \textbf{Capítulo 6}: Conclusão dos resultados obtidos durante o desenvolvimento
+	da proposta e possíveis caminhos para o futuro deste trabalho.
+	
+\end{itemize}
